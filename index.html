@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zephyr Developer Summit 2023</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      remark.macros.scale = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+      };
+      remark.macros.abs = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="position: absolute; top: 140px; width: ' + percentage + '" />';
+      };
+      var slideshow = remark.create({
+        sourceUrl: 'content.md',
+        countIncrementalSlides: false,
+        ratio: "16:9",
+        highlightStyle: 'tomorrow',
+        highlightLines: true
+
+        // github tomorrow
+        // arta, ascetic, dark, default, github, googlecode, idea, rainbow, solarized-dark, solarized-light, sunburst, tomorrow, tomorrow-night-blue, tomorrow-night-bright, tomorrow-night, tomorrow-night-eighties, vs, zenburn
+      });
+    </script>
+  </body>
+</html>

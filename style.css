@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body {
+  font-family: 'Arial';
+}
+
+h1, h2, h3 {
+  font-family: 'Arial';
+  font-weight: normal;
+  color: black;
+}
+
+.remark-slide-content li {
+  padding-top: 0.5em;
+}
+
+.remark-slide-content {
+  background-image: url(images/thingset-background-white.png);
+  background-size: cover;
+  font-size: 25px;
+  padding: 0em 2em 1em 2em;
+}
+
+.first, .last {
+  background-image: url(images/zds-background.png);
+}
+
+.remark-slide-content h1 {
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  padding:  32px 200px 32px 0;
+  margin: 0;
+  text-align: center;
+}
+
+.remark-slide-content h2 {
+  font-size: 36px;
+}
+
+.remark-slide-content h3 {
+  font-size: 32px;
+}
+
+.remark-slide-number {
+  color: #7dbb7f;
+  opacity: unset;
+  font-size: 20px;
+  bottom: 10px;
+  position: absolute;
+  right: 20px;
+}
+
+.remark-code, .remark-inline-code {
+  font-family: 'Ubuntu Mono';
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  padding: 10px;
+  background-color: #7dbb7f;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 2px solid #c0c0c0;
+}
+
+/* overwrite some defaults for first and last slide */
+.first {
+  color: #f3f3f3;
+  padding-top: 240px;
+}
+.first img {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  height: 260px;
+}
+.first h1 {
+  color: #f3f3f3;
+  padding: 0px;
+  margin: 0px;
+  font-size: 54px;
+  text-align: left;
+}
+.first .author {
+  color: #7dbb7f;
+  font-size: 36px;
+}
+.first .contact {
+  color: #7dbb7f;
+  font-size: 24px;
+}
+.first .hashtag {
+  font-size: 24px;
+  color: #7dbb7f;
+  bottom: 30px;
+  position: absolute;
+  right: 40px;
+}
+.first .remark-slide-number {
+  display: none;
+}
+
+.last .resources h1 {
+  color: #f3f3f3;
+  padding-top: 200px;
+  text-align: left;
+}
+.last .resources h2 {
+  color: #f3f3f3;
+}
+.last .resources {
+  color: #f3f3f3;
+  font-size: 30px;
+}
+.last .resources a {
+  color: #f3f3f3;
+  font-size: 30px;
+}
+.last .remark-slide-number {
+  display: none;
+}
+
+/* Two-column layout */
+.left-column {
+  width: 45%;
+  float: left;
+}
+.right-column {
+  width: 45%;
+  float: right;
+}
