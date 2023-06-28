@@ -70,19 +70,6 @@ What if we could use the same data format and protocol everywhere?
 
 .left-column[
 
-### Terminology
-
-- **Group**: Category of data objects belonging together, forming the data hierarchy.
-- **Data Item**: Actual value (leaf node of the tree structure)
-- **Subset**: Collection of pointers to actual data items
-- **Overlay**: Related meta information of actual data.
-
-]
-
---
-
-.right-column[
-
 ```json
 {
     "pNodeID": "C001CAFE01234567",    # data item
@@ -111,6 +98,22 @@ What if we could use the same data format and protocol everywhere?
 
 ]
 
+--
+
+### Main Objectives
+
+--
+
+Schema-less and self-explanatory: All essential information can be retrieved from the device itself.
+
+--
+
+Easy to use and human-readable (JSON in text mode).
+
+--
+
+Compact footprint (CBOR and numeric IDs in binary mode).
+
 ---
 
 # Data Object Prefixes
@@ -125,6 +128,7 @@ What if we could use the same data format and protocol everywhere?
 | `r`    | read-only item    |
 | `w`    | write-able item   |
 | `s`    | stored item       |
+| `p`    | protected item    |
 | `t`    | timestamp         |
 | `x`    | executable item   |
 
@@ -192,8 +196,6 @@ byte |    0     |      1 .. n       |   n+1 .. m  |
 # Request/Response Examples
 
 .left-column[
-Data model:
-
 ```json
 {
     "pNodeID": "C001CAFE01234567",
@@ -231,7 +233,7 @@ GET all `Sensor` values:
 :85 {"rRoomTemp_degC":18.3,"rHumidity_pct":60.2}
 ```
 
-UPDATE target temperature in `Control` endpoint:
+UPDATE target temperature:
 
 ```json
 =Control {"sTargetTemp_degC":20}
@@ -253,8 +255,6 @@ DELETE humidity sensor from live metrics subset:
 # Report/Desire Examples
 
 .left-column[
-Data model:
-
 ```json
 {
     "pNodeID": "C001CAFE01234567",
@@ -361,6 +361,7 @@ ThingSet messages are translated into the native format required by the protocol
 ### Used Zephyr features
 
 - Iterable Sections
+- Work queues
 - Peripheral drivers
   - UART / USB serial
   - CAN & ISO-TP
@@ -385,6 +386,7 @@ ThingSet messages are translated into the native format required by the protocol
 - Zephyr RTOS v3.4
 - Nordic nRF52840 DK
 - Bosch BME680 Sensor
+- ThingSet App (Flutter)
 ]
 
 ---
@@ -392,8 +394,6 @@ ThingSet messages are translated into the native format required by the protocol
 # Summary
 
 .left-column[
-
-Started with a data model ...
 
 ```json
 {
@@ -426,7 +426,7 @@ Started with a data model ...
 
 .right-column[
 
-... finished up with an app.
+Data Model + ThingSet Zephyr SDK =
 
 ![:scale 200px](images/screenshot-smart-thermostat-data.jpg)
 ![:scale 200px](images/screenshot-smart-thermostat-graph.jpg)
@@ -440,8 +440,17 @@ Started with a data model ...
 <br />
 
 ## 1. Release v1.0 spec till end of 2023
+
+--
+
 ## 2. Grow a community around ThingSet
+
+--
+
 ## 3. Improve ThingSet SDK and app features
+
+--
+
 ## 4. Support for other programming languages
 
 ---
@@ -450,14 +459,14 @@ class: last
 
 .resources[
 
-# Resources
+## Contact
 
-## Libre Solar
+Martin Jäger | [martin@libre.solar](mailto:martin@libre.solar) | [LinkedIn](https://www.linkedin.com/in/martin-j%C3%A4ger-4017a4129/)
 
-[libre.solar](https://libre.solar) | [github.com/LibreSolar](https://github.com/LibreSolar)
+## Resources
 
-## ThingSet
+Libre Solar:  [libre.solar](https://libre.solar) | [github.com/LibreSolar](https://github.com/LibreSolar)
 
-[thingset.io](https://thingset.io) | [github.com/ThingSet](https://github.com/ThingSet)
+ThingSet: [thingset.io](https://thingset.io) | [github.com/ThingSet](https://github.com/ThingSet)
 
 ]

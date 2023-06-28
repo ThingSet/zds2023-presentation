@@ -110,13 +110,15 @@ td {
 
 .last .resources h1 {
   color: #f3f3f3;
-  padding-top: 200px;
   text-align: left;
 }
 .last .resources h2 {
   color: #f3f3f3;
+  font-size: 40px;
+  padding-top: 20px;
 }
 .last .resources {
+  padding-top: 160px;
   color: #f3f3f3;
   font-size: 30px;
 }
